@@ -88,5 +88,19 @@
             return $result;
         }
 
+        public function Delete(int $id)
+        {
+            $sql = "DELETE FROM animal WHERE id=?";
+
+            $pdo = Conexao::conectar();
+            $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+            $query = $pdo->prepare($sql);
+            $query->execute(array($id));
+
+            $pdo = Conexao::desconectar();
+            
+        }
+
     }
 ?>

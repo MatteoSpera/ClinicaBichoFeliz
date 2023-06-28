@@ -40,4 +40,13 @@
 
             $dal-> Update($animal);
         }
+
+        public function Delete(int $id)
+        {
+            $dal = new \DAL\dalAnimal;
+            //inserir regras de negócio aqui
+
+
+            $dal-> Delete($id);
+        }
     }
