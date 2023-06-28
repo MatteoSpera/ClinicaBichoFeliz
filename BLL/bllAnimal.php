@@ -14,11 +14,19 @@
             return $dal->Select();
         }
 
+        public function SelectId()
+        {
+            $dal = new \DAL\dalAnimal();
+            //A fazer Regras de Negócio
+
+            return $dal->Select();
+        }
+
         public function Insert(\MODEL\Animal $animal){
 
             $dal = new \DAL\dalAnimal;
             //inserir regras de negócio aqui
-            
+
 
             $dal-> Insert($animal);
             

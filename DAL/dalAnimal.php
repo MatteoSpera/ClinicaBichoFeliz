@@ -28,6 +28,30 @@
             return $lstAnimal;
         }
 
+        public function SelectId(int $id)
+        {
+            $sql = "select * from animal where id=?";
+
+            $pdo = Conexao::conectar();
+            $query = $pdo->prepare($sql);
+            $query->execute(array($id));
+            $linha = $query->fetch(\PDO::FETCH_ASSOC);
+            Conexao::desconectar();
+
+            if ($linha != null)
+            {
+            $animal = new \MODEL\Animal();
+            $animal->setId($id);
+            $animal->setNome($linha['nome']);
+            $animal->setEspecie($linha['especie']);
+            $animal->setCondicao($linha['condicao']);
+            $animal->setDono($linha['dono']);
+            } else return null; // caso não seja encontrado, animal será nulo
+
+            return $animal;
+
+        }
+
         public function Insert(\MODEL\Animal $animal)
         {
             
