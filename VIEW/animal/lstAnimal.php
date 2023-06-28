@@ -51,7 +51,7 @@
                     <td><?php echo $animal->getCondicao(); ?></td>
                     <td><?php echo $animal->getDono(); ?></td>
                     <td>
-                        
+                        <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3" onclick="JavaScript:location.href='detAnimal.php?id='+<?php echo $animal->getId();?>"><i class="material-icons">description</i></a>
                         <a class="btn-floating btn-small waves-effect waves-light light-orange accent-3" onclick="JavaScript:location.href='edtAnimal.php?id='+<?php echo $animal->getId();?>"><i class="material-icons">edit</i></a>
                         
                     </td>
