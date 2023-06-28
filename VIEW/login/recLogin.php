@@ -16,8 +16,8 @@
                 $_SESSION['login'] = $user->getUsername(); //loga o usuário
                 header("location:../menu.php");
         }
-        else echo "Senha Incorreta";
+        else header("location:/ClinicaBichoFeliz/VIEW/login/login.php?error=wrongPassword");
 }
-else echo "Usuário não Encontrado";
+else header("location:/ClinicaBichoFeliz/VIEW/login/login.php?error=userNotFound");
             
 ?>

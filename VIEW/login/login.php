@@ -28,6 +28,13 @@
 
                 <div class="card-content">
                     <form class="center" action="/ClinicaBichoFeliz/VIEW/login/recLogin.php" method="post">
+                        <?php if($_GET['error'] == 'userNotFound')
+                        {
+                            echo "<h5>Usuário não encontrado!</h5>";
+                        } else if($_GET['error'] == 'wrongPassword')
+                        {
+                            echo "<h5>Senha Incorreta!</h5>";
+                        }?>
                         <div class="input-field s8">
                             <i class="material-icons iconis prefix">account_circle</i>
                             <input id="icon_prefix" type="text" name="username" class="validate">
