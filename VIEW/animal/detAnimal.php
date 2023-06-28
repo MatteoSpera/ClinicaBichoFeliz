@@ -21,6 +21,8 @@ $animal = $bll->SelectId($id); //cria cópia do animal buscando na lista pelo Id
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <script src="remover.js"></script><!-- script para remover animal -->
+
     <title>Detalhes do Animal</title>
 </head>
 
@@ -60,9 +62,14 @@ $animal = $bll->SelectId($id); //cria cópia do animal buscando na lista pelo Id
         </div>
         <div class="light-green accent-2 center col s12">
             <br>
-            <button class="green darken-4 waves-effect waves-light btn" type="button" onclick="JavaScript:location.href='edtAnimal.php?id='+<?php echo $animal->getId(); ?>">Editar <i class="material-icons">edit</i></button>
+            <button class="green darken-4 waves-effect waves-light btn" type="button" 
+            onclick="JavaScript:location.href='edtAnimal.php?id='+<?php echo $animal->getId(); ?>">Editar <i class="material-icons">edit</i></button>
 
-            <button class="purple darken-4 waves-effect waves-light btn" type="button" onclick="JavaScript:location.href='lstAnimal.php?id='+<?php echo $animal->getId(); ?>">Voltar <i class="material-icons">chevron_left</i></button>
+            <button class="red darken-4 waves-effect waves-light btn" type="button" 
+            onclick="JavaScript:remover(<?php echo $animal->getId();?>, '<?php echo $animal->getNome();?>')">Deletar <i class="material-icons">delete</i></button>
+
+            <button class="purple darken-4 waves-effect waves-light btn" type="button" 
+            onclick="JavaScript:location.href='lstAnimal.php'">Voltar <i class="material-icons">chevron_left</i></button>
             <br><br>
         </div>
 

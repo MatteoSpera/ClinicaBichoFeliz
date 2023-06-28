@@ -22,6 +22,8 @@
     <!--link para lib de ícones-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <script src="remover.js"></script><!-- script para remover animal -->
+
     <title>Listar Animais</title>
 </head>
 <body>
@@ -53,6 +55,7 @@
                     <td>
                         <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3" onclick="JavaScript:location.href='detAnimal.php?id='+<?php echo $animal->getId();?>"><i class="material-icons">description</i></a>
                         <a class="btn-floating btn-small waves-effect waves-light light-orange accent-3" onclick="JavaScript:location.href='edtAnimal.php?id='+<?php echo $animal->getId();?>"><i class="material-icons">edit</i></a>
+                        <a class="btn-floating btn-small waves-effect waves-light red accent-3" onclick="JavaScript:remover(<?php echo $animal->getId();?>, '<?php echo $animal->getNome();?>')"><i class="material-icons">delete</i></a>
                         
                     </td>
                 </tr>
