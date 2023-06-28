@@ -34,6 +34,7 @@
                 <th>Nome</th>
                 <th>Espécie</th>
                 <th>Condição</th>
+                <th>Dono</th>
             </tr>
 
             <?php 
@@ -47,6 +48,7 @@
                     <td><?php echo $animal->getNome(); ?></td>
                     <td><?php echo $animal->getEspecie(); ?></td>
                     <td><?php echo $animal->getCondicao(); ?></td>
+                    <td><?php echo $animal->getDono(); ?></td>
                 </tr>
             <?php
             } // <--- Chave de fechamento do Foreach
