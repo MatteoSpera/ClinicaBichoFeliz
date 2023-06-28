@@ -14,6 +14,8 @@
 </head>
 
 <body>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/menu.php'; ?>
+
     <div class="container ">
         <div class="center">
             <div class="light-green accent-2">

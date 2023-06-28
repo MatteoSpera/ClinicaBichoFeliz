@@ -27,6 +27,8 @@
     <title>Listar Animais</title>
 </head>
 <body>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/menu.php'; ?>
+
     <div class="container">
         <h1>Listar Pets Cadastrados no Sistema</h1>
 

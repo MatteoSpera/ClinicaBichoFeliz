@@ -24,6 +24,7 @@
     <title>Editar Animal</title>
 </head>
 <body>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/menu.php'; ?>
 
     <div class="container light-green lighten-5">
         <div class="center light-green accent-2">
