@@ -4,7 +4,8 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/MODEL/Animal.php';
 
     class dalAnimal{
-        public function Select(){
+        public function Select()
+        {
             $sql = "select * from animal;"; // comando que será mandado ao banco
             
             $pdo = Conexao::conectar();
@@ -25,6 +26,28 @@
             }
 
             return $lstAnimal;
+        }
+
+        public function Insert(\MODEL\Animal $animal)
+        {
+            
+            $sql = 
+            "INSERT INTO animal (nome, especie, condicao, dono) VALUES 
+            (
+                ?, 
+                ?, 
+                ?,
+                ?
+            );";
+
+            $pdo = Conexao::conectar();
+            $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+            $query = $pdo->prepare($sql); //prepare evita vulnerabilidades de Injeção SQL
+            $result = $query->execute(array($animal->getNome(), $animal->getEspecie(), $animal->getCondicao(), $animal->getDono()));
+            $pdo = Conexao::desconectar();
+            return $result;
+
         }
 
     }
