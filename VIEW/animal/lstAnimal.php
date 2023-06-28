@@ -28,7 +28,7 @@
     <div class="container">
         <h1>Listar Pets Cadastrados no Sistema</h1>
 
-        <table class="striped grey lighten-2">
+        <table class="striped light-green lighten-3">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>

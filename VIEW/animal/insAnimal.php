@@ -21,7 +21,7 @@
                 <h1>Cadastrar Pet na Clínica</h1>
                 <br>
             </div>
-            <div class="row grey lighten-4">
+            <div class="row light-green lighten-5">
                 <form action="recInsAnimal.php" method="POST" id="formInsAnimal"> <!--RecInsAnimal = receber e inserir animal-->
                     <div class="input-field col s8">
                         <input id="nome" type="text" class="validate" name="txtNome">

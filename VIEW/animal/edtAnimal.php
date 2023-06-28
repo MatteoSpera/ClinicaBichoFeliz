@@ -25,8 +25,8 @@
 </head>
 <body>
 
-    <div class="container purple lighten-5">
-        <div class="center purple accent-1">
+    <div class="container light-green lighten-5">
+        <div class="center light-green accent-2">
             <br><h1>Editar Animal</h1><br>
     
         </div>
@@ -58,7 +58,7 @@
                         <label for="dono" class="black-text bold">ID do Dono</label>
                     </div>
 
-                <div class="purple accent-1 center col s12">
+                <div class="light-green accent-2 center col s12">
                     <br>
                     <button class="green darken-4 waves-effect waves-light btn" type="submit">Salvar <i class="material-icons">save</i></button> <!--Ao salvar, manda para recEdtAnimal-->
                     <button class="red darken-4 waves-effect waves-light btn" type="reset">Limpar <i class="material-icons">delete</i></button>
