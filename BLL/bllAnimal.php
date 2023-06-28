@@ -31,4 +31,13 @@
             $dal-> Insert($animal);
             
         }
+
+        public function Update(\MODEL\Animal $animal)
+        {
+            $dal = new \DAL\dalAnimal;
+            //inserir regras de negócio aqui
+
+
+            $dal-> Update($animal);
+        }
     }

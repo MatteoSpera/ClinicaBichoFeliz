@@ -74,5 +74,19 @@
 
         }
 
+        public function Update(\MODEL\Animal $animal)
+        {
+            $sql = "UPDATE animal SET nome=?, especie=?, condicao=?, dono=? WHERE id=?";
+
+            $pdo = Conexao::conectar();
+            $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+            $query = $pdo->prepare($sql);
+            $result = $query->execute(array($animal->getNome(), $animal->getEspecie(), $animal->getCondicao(), $animal->getDono(), $animal->getId()));
+
+            $pdo = Conexao::desconectar();
+            return $result;
+        }
+
     }
 ?>
