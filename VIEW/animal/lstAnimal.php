@@ -35,6 +35,7 @@
                 <th>Espécie</th>
                 <th>Condição</th>
                 <th>Dono</th>
+                <th>INSERIR <a class="btn-floating btn-small waves-effect waves-light light-green accent-3" href="insAnimal.php"><i class="material-icons">add</i></a></th>
             </tr>
 
             <?php 
