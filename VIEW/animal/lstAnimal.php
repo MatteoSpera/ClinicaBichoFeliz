@@ -1,5 +1,5 @@
 <?php
-    use BLL\bllOperador;
+    use BLL\bllAnimal;
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllAnimal.php'; 
 
@@ -50,6 +50,11 @@
                     <td><?php echo $animal->getEspecie(); ?></td>
                     <td><?php echo $animal->getCondicao(); ?></td>
                     <td><?php echo $animal->getDono(); ?></td>
+                    <td>
+                        
+                        <a class="btn-floating btn-small waves-effect waves-light light-orange accent-3" onclick="JavaScript:location.href='edtAnimal.php?id='+<?php echo $animal->getId();?>"><i class="material-icons">edit</i></a>
+                        
+                    </td>
                 </tr>
             <?php
             } // <--- Chave de fechamento do Foreach
