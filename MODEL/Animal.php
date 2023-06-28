@@ -8,7 +8,7 @@ class Animal {
     private ?int $especie;
     private ?int $condicao;
 
-    public function __construct() // construtor parametrizado
+    public function __construct() // construtor não parametrizado
     {
  
     }
@@ -38,7 +38,7 @@ class Animal {
         $this->especie = $especie;
     }
 
-    
+
     public function getCondicao(){
         return $this->condicao;
     }
