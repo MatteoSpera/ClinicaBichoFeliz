@@ -14,12 +14,12 @@
             return $dal->Select();
         }
 
-        public function SelectId()
+        public function SelectId(int $id)
         {
             $dal = new \DAL\dalAnimal();
             //A fazer Regras de Negócio
 
-            return $dal->Select();
+            return $dal->SelectId($id);
         }
 
         public function Insert(\MODEL\Animal $animal){
