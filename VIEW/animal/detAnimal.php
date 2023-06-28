@@ -76,6 +76,7 @@ $animal = $bll->SelectId($id); //cria cópia do animal buscando na lista pelo Id
         </div>
 
     </div>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/footer.php'; ?>
 
 </body>
 

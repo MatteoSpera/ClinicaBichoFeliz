@@ -67,5 +67,8 @@
             
         </table>
     </div>
+
+    <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/footer.php'; ?>
+
 </body>
 </html>
