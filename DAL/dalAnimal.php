@@ -19,6 +19,7 @@
                 $animal->setNome($linha['nome']);
                 $animal->setEspecie($linha['especie']);
                 $animal->setCondicao($linha['condicao']);
+                $animal->setDono($linha['dono']);
 
                 $lstAnimal[] = $animal; //insere o animal na array
             }

@@ -7,6 +7,7 @@ class Animal {
     private ?string $nome;
     private ?int $especie;
     private ?int $condicao;
+    private ?int $dono;
 
     public function __construct() // construtor não parametrizado
     {
@@ -44,6 +45,13 @@ class Animal {
     }
     public function setCondicao(int $condicao){
         $this->condicao = $condicao;
+    }
+
+    public function getDono(){
+        return $this->dono;
+    }
+    public function setDono(int $dono){
+        $this->dono = $dono;
     }
 }
 
