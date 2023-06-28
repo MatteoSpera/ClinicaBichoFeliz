@@ -15,8 +15,8 @@
 
 <body>
     <nav>
-    <div class="nav-wrapper light-green accent-2">
-      <a href="#" class="brand-logo right"><img src="/ClinicaBichoFeliz/img/LogoBichoFeliz.png" alt="Site Logo" width="65" height="65"></a>
+    <div class="nav-wrapper white">
+      <a href="/ClinicaBichoFeliz/" class="brand-logo right"><img src="/ClinicaBichoFeliz/img/LogoBichoFeliz.png" alt="Site Logo" width="60" height="60"></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down ">
         <li><a href="/ClinicaBichoFeliz/VIEW/Animal/lstAnimal.php" class="black-text">Animal</a></li>
       </ul>
