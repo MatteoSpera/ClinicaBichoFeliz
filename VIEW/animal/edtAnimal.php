@@ -62,7 +62,7 @@
                 <div class="light-green accent-2 center col s12">
                     <br>
                     <button class="green darken-4 waves-effect waves-light btn" type="submit">Salvar <i class="material-icons">save</i></button> <!--Ao salvar, manda para recEdtAnimal-->
-                    <button class="red darken-4 waves-effect waves-light btn" type="reset">Limpar <i class="material-icons">delete</i></button>
+                    <button class="red darken-4 waves-effect waves-light btn" type="button" onclick="limparForm();">Limpar <i class="material-icons">delete</i></button>
                     <button class="purple darken-4 waves-effect waves-light btn" type="button" onclick="JavaScript:location.href='lstAnimal.php'">Voltar <i class="material-icons">chevron_left</i></button>
                     <br><br>
                 </div>
@@ -74,3 +74,16 @@
 
 </body>
 </html>
+
+<script>
+    function limparForm()
+    {
+        var fields = document.getElementsByTagName('input');
+        
+        for(let i = 0; i < fields.length; i++)
+        {
+            if(fields[i].type != 'hidden') 
+            fields[i].value = null;
+        }
+    }
+</script>
