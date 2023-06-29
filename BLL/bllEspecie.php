@@ -47,7 +47,15 @@
             $dal-> Insert($especie);
             
         }
-        
+
+        public function Update(\MODEL\Especie $especie)
+        {
+            $dal = new \DAL\dalEspecie;
+            //inserir regras de negócio aqui
+
+
+            $dal-> Update($especie);
+        }
     }
 
 
