@@ -26,6 +26,29 @@
             return $lstEspecie;
         }
 
+        public function SelectId(int $id)
+        {
+            $sql = "select * from especie where id=?";
+
+            $pdo = Conexao::conectar();
+            $query = $pdo->prepare($sql);
+            $query->execute(array($id));
+            $linha = $query->fetch(\PDO::FETCH_ASSOC);
+            Conexao::desconectar();
+
+            if ($linha != null)
+            {
+                $especie = new \MODEL\Especie();
+                $especie->setId($id);
+                $especie->setDescricao($linha['descricao']);
+                $especie->setQuantidade($linha['quantidade']);
+                
+            } else return null; // caso não seja encontrado, especie será nula
+
+            return $especie;
+
+        }
+
         public function RefreshId(int $id)
         {
             $sql = "select count(*) from animal where especie=".$id.";";

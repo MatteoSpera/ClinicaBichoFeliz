@@ -14,6 +14,14 @@
             return $dal->Select();
         }
 
+        public function SelectId(int $id)
+        {
+            $dal = new \DAL\dalEspecie();
+            //A fazer Regras de Negócio
+
+            return $dal->SelectId($id);
+        }
+
         public function RefreshId(int $id)
         {
             $dal = new \DAL\dalEspecie(); 
