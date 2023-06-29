@@ -1,7 +1,8 @@
 <?php
     use BLL\bllAnimal;
 
-    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllAnimal.php'; 
+    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllAnimal.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllEspecie.php'; 
 
     if (isset($_GET['busca']))
         $busca = $_GET['busca'];
@@ -12,6 +13,8 @@
 
     if ($busca == null) $lstAnimal = $bll->Select();
     else $lstAnimal = $bll->searchNome($busca);
+
+    $bllEspecie = new \BLL\bllEspecie;
 ?>
 
 <!DOCTYPE html>
@@ -71,12 +74,13 @@
             
             // para cada pet na lista, cria uma nova linha na tabela html
             foreach($lstAnimal as $animal){ // foreach abre dentro de uma tag e fecha na outra
-
+                $especie = $bllEspecie->SelectId($animal->getEspecie()) ;
             ?>
                 <tr>
                     <td><?php echo $animal->getId(); ?></td>
                     <td><?php echo $animal->getNome(); ?></td>
-                    <td><?php echo $animal->getEspecie(); ?></td>
+                    
+                    <td><?php echo $especie->getDescricao(); ?></td>
                     <td><?php echo $animal->getCondicao(); ?></td>
                     <td><?php echo $animal->getDono(); ?></td>
                     <td>
