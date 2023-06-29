@@ -2,9 +2,11 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllEspecie.php'; 
 use BLL\bllEspecie;
 $bll = new \BLL\bllEspecie();
-$lstEspecie = $bll->Select();
 
 $bll->refreshAll();
+
+$lstEspecie = $bll->Select();
+
 ?>
 
 <!DOCTYPE html>
