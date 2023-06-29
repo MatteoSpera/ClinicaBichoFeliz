@@ -22,16 +22,6 @@
             return $dal->SelectId($id);
         }
 
-        public function Insert(\MODEL\Especie $especie){
-
-            $dal = new \DAL\dalEspecie;
-            //inserir regras de negócio aqui
-
-
-            $dal-> Insert($especie);
-            
-        }
-
         public function RefreshId(int $id)
         {
             $dal = new \DAL\dalEspecie(); 
@@ -47,6 +37,17 @@
            
             $dal->refreshAll();
         }
+        
+        public function Insert(\MODEL\Especie $especie){
+
+            $dal = new \DAL\dalEspecie;
+            //inserir regras de negócio aqui
+
+
+            $dal-> Insert($especie);
+            
+        }
+        
     }
 
 

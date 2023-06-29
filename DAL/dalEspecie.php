@@ -48,26 +48,6 @@
             return $especie;
 
         }
-
-        public function Insert(\MODEL\Especie $especie)
-        {
-            
-            $sql = 
-            "INSERT INTO especie (descricao, quantidade) VALUES 
-            (
-                ?, 
-                ?
-            );";
-
-            $pdo = Conexao::conectar();
-            $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-
-            $query = $pdo->prepare($sql); //prepare evita vulnerabilidades de Injeção SQL
-            $result = $query->execute(array($especie->getDescricao(), $especie->getQuantidade()));
-            $pdo = Conexao::desconectar();
-            return $result;
-
-        }
         
         public function RefreshId(int $id)
         {
@@ -99,6 +79,27 @@
             foreach($lstEspecie as $especie) $this->RefreshId($especie->getId());
 
         }
+        
+        public function Insert(\MODEL\Especie $especie)
+        {
+            
+            $sql = 
+            "INSERT INTO especie (descricao, quantidade) VALUES 
+            (
+                ?, 
+                ?
+            );";
+
+            $pdo = Conexao::conectar();
+            $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+            $query = $pdo->prepare($sql); //prepare evita vulnerabilidades de Injeção SQL
+            $result = $query->execute(array($especie->getDescricao(), $especie->getQuantidade()));
+            $pdo = Conexao::desconectar();
+            return $result;
+
+        }
+        
     }
 
 ?>
