@@ -28,10 +28,10 @@
 
                 <div class="card-content">
                     <form class="center" action="/ClinicaBichoFeliz/VIEW/login/recLogin.php" method="post">
-                        <?php if($_GET['error'] == 'userNotFound')
+                        <?php if(isset($_GET['error']) and $_GET['error'] == 'userNotFound')
                         {
                             echo "<h5>Usuário não encontrado!</h5>";
-                        } else if($_GET['error'] == 'wrongPassword')
+                        } else if(isset($_GET['error']) and $_GET['error'] == 'wrongPassword')
                         {
                             echo "<h5>Senha Incorreta!</h5>";
                         }?>
