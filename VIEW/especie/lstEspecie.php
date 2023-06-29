@@ -33,10 +33,10 @@ $lstEspecie = $bll->Select();
     <div class="container">
         <h1>Relatório de Espécies de Pacientes</h1><br>
         <h5>
-            Atualizar <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3" href="javascript:location.reload();"><i class="material-icons">refresh</i></a> <br>
-            Inserir <a class="btn-floating btn-small waves-effect waves-light red accent-3" href="insEspecie.php"><i class="material-icons">add</i></a> <br>
 
-        
+            <a class="waves-effect waves-light btn-large light-blue accent-3" href="javascript:location.reload();"><i class="material-icons left">refresh</i>Atualizar</a>
+            <a class="waves-effect waves-light btn-large red accent-3" href="insEspecie.php"><i class="material-icons left">add</i>Inserir</a>
+            <br><br>
         </h5>
 
         <table class="striped light-green lighten-3">
