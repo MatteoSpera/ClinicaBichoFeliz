@@ -3,7 +3,8 @@
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllAnimal.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllEspecie.php'; 
-    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllCondicao.php'; 
+    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllCondicao.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllUsuario.php'; 
 
     if (isset($_GET['busca']))
         $busca = $_GET['busca'];
@@ -17,6 +18,7 @@
 
     $bllEspecie = new \BLL\bllEspecie;
     $bllCondicao = new \BLL\bllCondicao;
+    $bllUsuario = new \BLL\bllUsuario;
 ?>
 
 <!DOCTYPE html>
@@ -78,6 +80,7 @@
             foreach($lstAnimal as $animal){ // foreach abre dentro de uma tag e fecha na outra
                 $especie = $bllEspecie->SelectId($animal->getEspecie()) ;
                 $condicao = $bllCondicao->SelectId($animal->getCondicao()) ;
+                $usuario = $bllUsuario->SelectId($animal->getDono()) ;
             ?>
                 <tr>
                     <td><?php echo $animal->getId(); ?></td>
@@ -85,7 +88,7 @@
                     
                     <td><?php echo $especie->getDescricao(); ?></td>
                     <td><?php echo $condicao->getDescricao(); ?></td>
-                    <td><?php echo $animal->getDono(); ?></td>
+                    <td><?php echo $usuario->getUsername(); ?></td>
                     <td>
                         <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3" onclick="JavaScript:location.href='detAnimal.php?id='+<?php echo $animal->getId();?>"><i class="material-icons">description</i></a>
                         <a class="btn-floating btn-small waves-effect waves-light light-orange accent-3" onclick="JavaScript:location.href='edtAnimal.php?id='+<?php echo $animal->getId();?>"><i class="material-icons">edit</i></a>
