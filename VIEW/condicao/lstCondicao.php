@@ -32,7 +32,7 @@ $lstCondicao = $bll->Select();
 
     <div class="container">
         <h1>Relatório de Condições de Pacientes</h1><br>
-        <h5>Atualizar <a class="btn-floating btn-small waves-effect waves-light light-green accent-3" href="javascript:location.reload();"><i class="material-icons">refresh</i></a></h5>
+        <a class="waves-effect waves-light btn-large light-blue accent-3" href="javascript:location.reload();"><i class="material-icons left">refresh</i>Atualizar</a><br><br>
 
         <table class="striped light-green lighten-3">
 
