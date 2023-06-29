@@ -3,10 +3,15 @@
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllAnimal.php'; 
 
+    if (isset($_GET['busca']))
+        $busca = $_GET['busca'];
+    else $busca = null;
+
+
     $bll = new \BLL\bllAnimal();
 
-    $lstAnimal = $bll->Select();
-
+    if ($busca == null) $lstAnimal = $bll->Select();
+    else $lstAnimal = $bll->searchNome($busca);
 ?>
 
 <!DOCTYPE html>
@@ -45,15 +50,23 @@
         </div>
 
         <table class="striped light-green lighten-3">
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Espécie</th>
-                <th>Condição</th>
-                <th>Dono</th>
-                <th>INSERIR <a class="btn-floating btn-small waves-effect waves-light light-green accent-3" href="insAnimal.php"><i class="material-icons">add</i></a></th>
-            </tr>
-
+            <?php 
+                if (!empty($lstAnimal))
+                {
+                    echo 
+                    '<tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Espécie</th>
+                        <th>Condição</th>
+                        <th>Dono</th>
+                        <th>INSERIR <a class="btn-floating btn-small waves-effect waves-light light-green accent-3" href="insAnimal.php"><i class="material-icons">add</i></a></th>
+                    </tr>'
+                    ;
+                } else echo '<h5>Nenhum animal que corresponda à busca foi encontrado.</h5>';
+            ?>
+            
+                
             <?php 
             
             // para cada pet na lista, cria uma nova linha na tabela html
@@ -79,6 +92,7 @@
             
         </table>
     </div>
+    <br><br>
 
     <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/footer.php'; ?>
 
