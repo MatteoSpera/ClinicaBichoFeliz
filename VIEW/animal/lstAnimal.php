@@ -40,7 +40,7 @@
     <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/menu.php'; ?>
 
     <div class="container">
-        <h1>Listar Pets Cadastrados no Sistema</h1>
+        <h1>Pets Cadastrados no Sistema</h1>
 
         <div class="row">
             <div class="input-field">
