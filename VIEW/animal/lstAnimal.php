@@ -32,6 +32,18 @@
     <div class="container">
         <h1>Listar Pets Cadastrados no Sistema</h1>
 
+        <div class="row">
+            <div class="input-field">
+                <form action="lstAnimal.php" method="GET" id="formBuscaAnimal">
+                    <div class="input-field col s7">
+                        <input type="text" placeholder="Pesquisar Pet por Nome" class="form-control col s10" id="txtBusca" name="busca">
+                        <button class="btn waves-effect waves-light col m1 light-green accent-4" type="submit" name="action">
+                        <i class="material-icons right">search</i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <table class="striped light-green lighten-3">
             <tr>
                 <th>ID</th>
