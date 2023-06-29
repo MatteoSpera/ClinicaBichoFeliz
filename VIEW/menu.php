@@ -22,7 +22,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/login/restrict.p
     <div class="nav-wrapper white">
       <a href="/ClinicaBichoFeliz/" class="brand-logo right"><img src="/ClinicaBichoFeliz/img/LogoBichoFeliz.png" alt="Site Logo" width="60" height="60"></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down ">
-        <li><a href="/ClinicaBichoFeliz/VIEW/Animal/lstAnimal.php" class="black-text">Animal</a></li>
+        <li><a href="/ClinicaBichoFeliz/VIEW/Animal/lstAnimal.php" class="black-text">Animais</a></li>
+        <li><a href="/ClinicaBichoFeliz/VIEW/Especie/lstEspecie.php" class="black-text">Espécies</a></li>
         <li><a href="/ClinicaBichoFeliz/?logout=true" class="black-text">Logout</a></li>
       </ul>
     </div>
