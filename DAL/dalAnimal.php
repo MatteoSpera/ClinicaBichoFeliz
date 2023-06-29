@@ -52,6 +52,35 @@
 
         }
 
+        public function SearchNome(string $bsc)
+        {
+            //retorna todos animais que contenham a string bsc no nome
+            $sql = "select * from animal WHERE nome like  '%" . $bsc .  "%' order by nome;";
+
+
+            $pdo = Conexao::conectar();
+            
+            $result = $pdo->query($sql);
+            
+            Conexao::desconectar();
+            $lstAnimal = array(); //Cria array vazia
+
+            foreach($result as $linha){ //para cada elemento na lista result, ou seja, para cada linha na tabela
+                $animal = new \MODEL\Animal();
+
+                $animal->setId($linha['id']);
+                $animal->setNome($linha['nome']);
+                $animal->setEspecie($linha['especie']);
+                $animal->setCondicao($linha['condicao']);
+                $animal->setDono($linha['dono']);
+
+                $lstAnimal[] = $animal; //insere animal na array
+            }
+
+            return $lstAnimal;
+
+        }
+
         public function Insert(\MODEL\Animal $animal)
         {
             

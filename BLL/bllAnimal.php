@@ -22,6 +22,14 @@
             return $dal->SelectId($id);
         }
 
+        public function SearchNome(string $bsc)
+        {
+            $dal = new \DAL\dalAnimal;
+            //inserir regras de negócio aqui
+
+            return $dal->SearchNome($bsc);
+        }
+
         public function Insert(\MODEL\Animal $animal){
 
             $dal = new \DAL\dalAnimal;
