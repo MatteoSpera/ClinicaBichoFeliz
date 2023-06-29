@@ -22,7 +22,7 @@
             <div class="card">
 
                 <div class="card-action light-green darken-1 white-text">
-                    <img src="/ClinicaBichoFeliz/img/LogoBichoFeliz.png" alt="" class="circle responsive-img" width="250px">
+                    <img src="/ClinicaBichoFeliz/img/LogoTipoBichoFeliz.png" alt="" class="circle responsive-img" width="250px">
                     <h3>Fazer Login</h3>
                 </div>
 
