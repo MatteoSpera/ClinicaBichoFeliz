@@ -32,7 +32,7 @@
 
     <script src="remover.js"></script><!-- script para remover animal -->
 
-    <title>Listar Animais</title>
+    <title>Animais</title>
 </head>
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/menu.php'; ?>

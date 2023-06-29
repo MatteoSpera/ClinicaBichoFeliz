@@ -24,7 +24,7 @@ $lstEspecie = $bll->Select();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-    <title>Listar Espécies</title>
+    <title>Espécies</title>
 </head>
 
 <body>
