@@ -1,5 +1,6 @@
 <?php
     include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllUsuario.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/login/logout.php';
 
     $username = trim($_POST['username']); //trim remove espaços em branco antes e depois da string
     $senha = trim($_POST['senha']);
@@ -16,8 +17,8 @@
                 $_SESSION['login'] = $user->getUsername(); //loga o usuário
                 header("location:../menu.php");
         }
-        else header("location:/ClinicaBichoFeliz/VIEW/login/login.php?error=wrongPassword");
+        else logout(true, "wrongPassword");
 }
-else header("location:/ClinicaBichoFeliz/VIEW/login/login.php?error=userNotFound");
+else logout(true, "userNotFound");
             
 ?>
