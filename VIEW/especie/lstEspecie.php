@@ -46,6 +46,7 @@ $lstEspecie = $bll->Select();
                 <th>Espécie</th>
                 <th>Quantidade</th>
                 <th></th>
+                <th></th>
             </tr>
             <?php
 
