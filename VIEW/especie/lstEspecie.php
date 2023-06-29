@@ -33,7 +33,6 @@ $lstEspecie = $bll->Select();
     <div class="container">
         <h1>Relatório de Espécies de Pacientes</h1><br>
         <h5>
-
             <a class="waves-effect waves-light btn-large light-blue accent-3" href="javascript:location.reload();"><i class="material-icons left">refresh</i>Atualizar</a>
             <a class="waves-effect waves-light btn-large red accent-3" href="insEspecie.php"><i class="material-icons left">add</i>Inserir</a>
             <br><br>
@@ -46,6 +45,7 @@ $lstEspecie = $bll->Select();
                 <th>ID</th>
                 <th>Espécie</th>
                 <th>Quantidade</th>
+                <th></th>
             </tr>
             <?php
 
@@ -58,6 +58,10 @@ $lstEspecie = $bll->Select();
                     <td><?php echo $especie->getId(); ?></td>
                     <td><?php echo $especie->getDescricao(); ?></td>
                     <td><?php echo $especie->getQuantidade(); ?></td>
+                    <td>
+                        <a class="btn-floating btn-medium waves-effect waves-light teal darken-1" 
+                        href="<?php echo 'edtEspecie.php?id=' . $especie->getId(); ?>"><i class="material-icons">edit</i></a>
+                    </td>
                 </tr>
             <?php
             } // <--- Chave de fechamento do Foreach
