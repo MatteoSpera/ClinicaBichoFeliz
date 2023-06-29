@@ -1,3 +1,7 @@
+<?php 
+/*Impede a Página de ser acessada caso não haja uma sessão válida */ 
+include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/login/restrict.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,6 +23,7 @@
       <a href="/ClinicaBichoFeliz/" class="brand-logo right"><img src="/ClinicaBichoFeliz/img/LogoBichoFeliz.png" alt="Site Logo" width="60" height="60"></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down ">
         <li><a href="/ClinicaBichoFeliz/VIEW/Animal/lstAnimal.php" class="black-text">Animal</a></li>
+        <li><a href="/ClinicaBichoFeliz/?logout=true" class="black-text">Logout</a></li>
       </ul>
     </div>
   </nav>
