@@ -32,7 +32,12 @@ $lstEspecie = $bll->Select();
 
     <div class="container">
         <h1>Relatório de Espécies de Pacientes</h1><br>
-        <h5>Atualizar <a class="btn-floating btn-small waves-effect waves-light light-green accent-3" href="javascript:location.reload();"><i class="material-icons">refresh</i></a></h5>
+        <h5>
+            Atualizar <a class="btn-floating btn-small waves-effect waves-light light-blue accent-3" href="javascript:location.reload();"><i class="material-icons">refresh</i></a> <br>
+            Inserir <a class="btn-floating btn-small waves-effect waves-light red accent-3" href="insEspecie.php"><i class="material-icons">add</i></a> <br>
+
+        
+        </h5>
 
         <table class="striped light-green lighten-3">
 
