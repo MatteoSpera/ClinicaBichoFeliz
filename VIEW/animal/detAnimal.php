@@ -1,11 +1,23 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/ClinicaBichoFeliz/BLL/bllAnimal.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/ClinicaBichoFeliz/BLL/bllAnimal.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllEspecie.php'; 
+    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllCondicao.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/BLL/bllUsuario.php'; 
 
 $id = $_GET['id']; //$_GET é a variável que contém as infos recebidas através do método GET
 
 
 $bll = new \BLL\bllAnimal();
 $animal = $bll->SelectId($id); //cria cópia do animal buscando na lista pelo Id recebido por GET
+
+    $bllEspecie = new \BLL\bllEspecie;
+    $especie = $bllEspecie->SelectId($animal->getEspecie())->getDescricao() ;
+
+    $bllCondicao = new \BLL\bllCondicao;
+    $condicao = $bllCondicao->SelectId($animal->getCondicao())->getDescricao() ;
+
+    $bllUsuario = new \BLL\bllUsuario;
+    $dono = $bllUsuario->SelectId($animal->getDono())->getUsername() ;
 
 ?>
 
@@ -48,15 +60,15 @@ $animal = $bll->SelectId($id); //cria cópia do animal buscando na lista pelo Id
                 </label>
 
                 <label for="especie" class="black-text bold">
-                    <h5>Espécie: <?php echo $animal->getEspecie(); ?></h5>
+                    <h5>Espécie: <?php echo $especie ?></h5>
                 </label>
 
                 <label for="condicao" class="black-text bold">
-                    <h5>Condição: <?php echo $animal->getCondicao(); ?></h5>
+                    <h5>Condição: <?php echo $condicao ?></h5>
                 </label>
 
                 <label for="dono" class="black-text bold">
-                    <h5>Dono: <?php echo $animal->getDono(); ?></h5>
+                    <h5>Dono: <?php echo $dono ?></h5>
                 </label>
 
 
