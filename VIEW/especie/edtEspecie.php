@@ -15,11 +15,16 @@ $especie = $bll->SelectId($id);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+        <link rel="stylesheet" href="/ClinicaBichoFeliz/materializeButGood.css"></link><!-- Materialize editado-->
+    
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script><!-- Inclusão do jQuery-->
+    
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script><!-- Inclusão do Plugin jQuery Validation-->
 
     <title>Editar Espécie</title>
 </head>
@@ -36,13 +41,13 @@ $especie = $bll->SelectId($id);
         <div class="row">
             <form action="recEdtEspecie.php" method="POST" id="formEdtEspecie">
                 <div class="input-field col s8">
-                    <label for="id" class="black-text bold">ID: <?php echo $id; ?></label><br><br>
+                    <label for="id" class="black-text bold browser-default">ID: <?php echo $id; ?></label><br><br>
                     <input type="hidden" name="txtId" value="<?php echo $id; ?>">
                 </div>
 
                 <div class="input-field col s8">
                     <input id="descricao" type="text" class="validate" name="txtDescricao" value="<?php echo $especie->getDescricao(); ?>">
-                    <label for="descricao" class="black-text bold">Nome da Espécie</label>
+                    <label for="descricao" class="black-text bold browser-default">Nome da Espécie</label>
                 </div>
 
                 <div class="input-field col s8">
@@ -60,7 +65,19 @@ $especie = $bll->SelectId($id);
         </div>
     </div>
     <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/footer.php'; ?>
-
+    <script>
+        $("#formEdtEspecie").validate({
+            rules: {
+                txtDescricao: {
+                    required: true,
+                    minlength: 1
+                },
+            },
+            messages: {
+                txtDescricao: "Insira um nome Válido"
+            }
+        });
+    </script>
 </body>
 
 </html>

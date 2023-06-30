@@ -4,11 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="/ClinicaBichoFeliz/materializeButGood.css"></link><!-- Materialize editado-->
+    
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script><!-- Inclusão do jQuery-->
+    
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script><!-- Inclusão do Plugin jQuery Validation-->
 
     <title>Inserir Espécie</title>
 </head>
@@ -17,8 +22,8 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/menu.php'; ?>
 
     <div class="container ">
-        <div class="center">
-            <div class="light-green accent-2">
+        <div class="">
+            <div class="light-green accent-2 center">
                 <br>
                 <h1>Inserir Nova Espécie no Sistema</h1>
                 <br>
@@ -27,7 +32,7 @@
                 <form action="recInsEspecie.php" method="POST" id="formInsEspecie">
                     <div class="input-field col s8">
                         <input id="descricao" type="text" class="validate" name="txtDescricao">
-                        <label for="descricao" class="black-text bold">Nome da Espécie</label>
+                        <label for="descricao" class="black-text bold browser-default">Nome da Espécie</label>
                     </div>
 
                     <div class="light-green accent-2 center col s12">
@@ -42,7 +47,19 @@
         </div>
     </div>
     <?php include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/footer.php'; ?>
-
+    <script>
+        $("#formInsEspecie").validate({
+            rules: {
+                txtDescricao: {
+                    required: true,
+                    minlength: 1
+                },
+            },
+            messages: {
+                txtDescricao: "Insira um nome Válido",
+            }
+        });
+    </script>
 </body>
 
 </html>
