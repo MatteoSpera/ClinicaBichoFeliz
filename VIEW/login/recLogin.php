@@ -15,7 +15,7 @@
         {
                 session_start(); // inicia a sessão
                 $_SESSION['login'] = $user->getUsername(); //loga o usuário
-                header("location:../menu.php");
+                header("location:/ClinicaBichoFeliz");
         }
         else logout(true, "wrongPassword");
 }

@@ -6,7 +6,7 @@
     session_start();
     if(isset($_SESSION['login'])) // se estiver logado, vai para a home, senão, vai para o Login
     {
-        include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/menu.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/home.php';
     } else
     {
         include_once $_SERVER['DOCUMENT_ROOT'].'/ClinicaBichoFeliz/VIEW/login/login.php' ;
